@@ -9,7 +9,7 @@ const Attachment = () => {
   return (
     <a download href={file} title={'Download attachment'}>
       <div className={'attachment-message'}>
-        <img src={logo} alt={'Attachment Message'} />
+        <img src={logo} />
         <span>{'Download Attachment'}</span>
       </div>
     </a>
