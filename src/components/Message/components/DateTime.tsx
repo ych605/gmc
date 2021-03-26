@@ -10,7 +10,7 @@ const DateTime = () => {
   const date = dayjs.unix(createdAt);
 
   return (
-    <time dateTime={date.format('YYYY-MM-DD HH:mm')}>
+    <time dateTime={date.format('YYYY-MM-DD HH:mm')} data-testid={'datetime'}>
       {date.format('MMM Do h:mm A')}
     </time>
   );

@@ -6,7 +6,7 @@ const Text = () => {
   const { content: { text } } = useMessageContext() as TextMessageType;
   
   return (
-    <span className={'text-message'}>{text}</span>
+    <span className={'text-message'} data-testid={'text'}>{text}</span>
   );
 };
 

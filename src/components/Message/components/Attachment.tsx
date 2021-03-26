@@ -7,7 +7,7 @@ const Attachment = () => {
   const { content: { file } } = useMessageContext() as AttachmentMessageType;
   
   return (
-    <a download href={file} title={'Download attachment'}>
+    <a download href={file} title={'Download attachment'} data-testid={'attachment'}>
       <div className={'attachment-message'}>
         <img src={logo} alt={''} />
         <span>{'Download Attachment'}</span>

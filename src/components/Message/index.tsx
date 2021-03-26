@@ -14,7 +14,7 @@ const Message = (props: PropsWithChildren<MessageProps>) => {
 
   return (
     <MessageContext.Provider value={messageProps}>
-      <div className={`message-container ${senderType}`}>
+      <div className={`message-container ${senderType}`} data-testid={'message'}>
         {children}
         <DateTime />
       </div>
