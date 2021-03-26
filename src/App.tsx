@@ -1,18 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
-/** Conversation Data */
-import conversationData from './fixtures/conversation';
+import conversationData from './fixtures/conversation'; // Conversation Data
+import { MessageType } from './types/messages';
+import Conversation from './components/Conversation';
 
-function App() {
+const App = () => {
+  const [conversationMessages, setConversationMessages] = useState([] as MessageType[]);
+
+  useEffect(() => {
+    setConversationMessages(conversationData);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Start writing your code here!</p>
-      </header>
+    <div className={'App'}>
+      <h1>{'Generic Message Component Challenge'}</h1>
+      <Conversation messages={conversationMessages} />
     </div>
   );
-}
+};
 
 export default App;
