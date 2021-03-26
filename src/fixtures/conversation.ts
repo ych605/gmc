@@ -1,3 +1,5 @@
+import { MessageType } from '../types/messages';
+
 /**
  * `id` will always be unique
  * `content` simply describes the content of the message
@@ -5,7 +7,7 @@
  * `senderType` can either be 'agent' | 'user'
  * `createdAt` will always be a Date and sorted
  */
-export default [
+const conversationData: MessageType[] = [
   {
     id: '1',
     content: {
@@ -18,8 +20,7 @@ export default [
   {
     id: '2',
     content: {
-      text:
-        "transmitting the program won't do anything, we need to quantify the auxiliary JSON driver!",
+      text: "transmitting the program won't do anything, we need to quantify the auxiliary JSON driver!",
     },
     contentType: 'text',
     senderType: 'user',
@@ -53,3 +54,7 @@ export default [
     createdAt: 1603180971,
   },
 ];
+
+const sortByCreatedAtInAscendingOrder = (data: MessageType[]) => data.sort((a, b) => a.createdAt - b.createdAt);
+
+export default sortByCreatedAtInAscendingOrder(conversationData);
