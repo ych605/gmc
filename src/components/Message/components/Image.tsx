@@ -6,7 +6,7 @@ const Image = () => {
   const { content: { url } } = useMessageContext() as ImageMessageType;
   
   return (
-    <img src={url} className={'image-message'} />
+    <img src={url} className={'image-message'} alt={''} />
   );
 };
 
