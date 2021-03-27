@@ -59,6 +59,8 @@
 
 .message-container .image-message {
   border-radius: 0.8rem;
+  width: 100%;
+  height: auto;
 }
 
 .message-container a {
