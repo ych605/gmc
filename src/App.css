@@ -7,50 +7,52 @@
 .App {
   flex: 1;
   text-align: center;
-  background: linear-gradient(45deg, #9ccef5 0%, #a8baf1 49%, #cab9ec 82%);
+  background-color: #e0e0e0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  overflow: hidden;
 }
 
 .App h1 {
   margin: 0;
-  padding-bottom: 3rem;
-}
-
-.glassmorphism {
-  background: rgba(255, 255, 255, 0.40);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(2.5px);
-  -webkit-backdrop-filter: blur(2.5px);
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding-bottom: 0.8rem;
+  font-family: "Poppins";
+  color: #00000073;
 }
 
 .conversation-container {
-  height: 80vh;
-  width: 60vh;
+  flex: 1;
+  width: 100%;
+  max-width: 60vh;
   overflow-x: hidden;
   overflow-y: auto;
+  border-radius: 1.2rem;
+  background-color: #e0e0e0;
+  box-shadow: inset 10px 10px 20px #c6c6c6, inset -10px -10px 20px #f7f7f7;
 }
 
-.conversation-content {
-  padding: 1.6rem;
+.conversation-messages-list {
+  padding: 3rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
+  gap: 3rem;
 }
 
 .message-container {
-  margin: 0.3rem 0;
   max-width: 65%;
-  border-radius: 1.2rem;
-  box-shadow: 0 5px 10px 0 rgba(31, 38, 135, 0.37);
-  padding: 0.8rem;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 10px #c6c6c6, -5px -5px 10px #f7f7f7;
+  padding: 1.2rem;
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  gap: 0.8rem;
   font-size: 1.2rem;
+  color: #5d5d5d;
 }
 
 .message-container .text-message {
@@ -75,28 +77,21 @@
   justify-content: center;
   height: 5rem;
   border-radius: 0.8rem;
-  padding: 1rem
+  padding: 1rem;
 }
 
 .message-container .attachment-message:hover {
-  background-color: #ececec;
+  box-shadow: inset 3px 3px 6px #c6c6c6, inset -3px -3px 6px #f7f7f7;
 }
 
 .message-container .attachment-message:active {
-  background-color: #c4c4c4;
+  box-shadow: inset 5px 5px 10px #b4b4b4, inset -5px -5px 10px #f7f7f7;
 }
 
 .message-container .attachment-message img {
   width: auto;
   height: 100%;
   opacity: 0.5;
-  transform: scale(0.9);
-  transition: all 0.16s ease-in;
-}
-
-.message-container .attachment-message:hover img {
-  opacity: 1;
-  transform: scale(1);
 }
 
 .message-container .attachment-message span {
@@ -109,24 +104,64 @@
 .message-container time {
   text-align: left;
   color: #888888;
-  padding-top: 0.4rem;
   font-size: 1rem;
 }
 
 .message-container.agent {
   align-self: flex-end;
-  background-color: #7989ac;
-  border: 1px solid #7384aa;
+  background-color: #cfcfcf;
   color: #fff;
 }
 
 .message-container.user {
   align-self: flex-start;
-  background-color: #fff;
-  border: 1px solid #b1b1b1;
+  background-color: #e0e0e0;
 }
 
 .message-container.agent time {
   text-align: right;
-  color: #b8caf1;
+  color: #5f5f5f;
+}
+
+.reply-box {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 2rem;
+  width: 100%;
+  max-width: 60vh;
+}
+
+.reply-input {
+  flex: 1;
+  border-radius: 1.2rem;
+  border: 0;
+  outline: none;
+  background-color: #e0e0e0;
+  box-shadow: inset 6px 6px 12px #c6c6c6, inset -6px -6px 12px #fff;
+  padding: 1.2rem;
+  font-size: 1.4rem;
+}
+
+.reply-button {
+  font-family: "Poppins";
+  border-radius: 1.2rem;
+  border: 0;
+  outline: none;
+  background-color: #e0e0e0;
+  box-shadow: 5px 5px 10px #c6c6c6, -5px -5px 10px #f7f7f7;
+  padding: 0 1rem;
+  color: #5d5d5d;
+  font-size: 1.4rem;
+  transition: all 0.16s ease-in-out;
+}
+
+.reply-button:hover {
+  cursor: pointer;
+  box-shadow: 5px 5px 10px #9e9e9e, -5px -5px 10px #ffffff;
+}
+
+.reply-button:active {
+  background: linear-gradient(145deg, #cacaca, #f0f0f0);
+  box-shadow: 5px 5px 10px #c6c6c6, -5px -5px 10px #f7f7f7;
 }
